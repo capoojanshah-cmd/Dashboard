@@ -513,7 +513,7 @@ function SwingModule({stockData}) {
                 <Td right mono color="var(--amber)">{rr(t.entry,t.sl,t.t1)}</Td>
                 <Td><ConvBadge c={t.conviction}/></Td>
                 <Td>
-                  <div style={{display:"flex",gap:4"}}>
+                  <div style={{display:"flex",gap:4}}>
                     <select onChange={e=>updateStatus(t.id,e.target.value)} value={t.status} style={{fontSize:10,background:"var(--bg3)",border:"1px solid var(--border2)",borderRadius:3,padding:"2px 4px",color:"var(--text)",cursor:"pointer"}}>
                       <option>Open</option><option>Partial</option><option>Closed</option><option>SL Hit</option>
                     </select>
