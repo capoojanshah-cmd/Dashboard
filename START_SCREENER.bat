@@ -1,9 +1,9 @@
 @echo off
-title Stock Parameter Screener — PJ Version (NSE Bhavcopy)
+title Stock Parameter Screener — PJ Version
 echo.
 echo ========================================================
 echo   STOCK PARAMETER SCREENER
-echo   NSE Bhavcopy — Free, No Auth, No Token Expiry
+echo   Dhan API + Yahoo Finance
 echo ========================================================
 echo.
 echo   Keep this window open while using the screener.
