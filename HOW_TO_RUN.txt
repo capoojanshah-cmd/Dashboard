@@ -1,0 +1,38 @@
+MKTDESK — NSE BHAVCOPY EDITION
+================================
+
+FILES:
+  server.py                  — Python backend (port 5555) — NSE Bhavcopy
+  index.html                 — Dashboard frontend (for local use)
+  START_SCREENER.bat         — Windows launcher (double-click to start)
+  src/ + package.json etc    — Vercel web app source (optional, see below)
+  api_bhavcopy_vercel.js     — Vercel serverless function (rename to api/bhavcopy.js)
+
+PREREQUISITES:
+  - Python 3.8+ installed
+  - No pip install needed (standard library + zipfile only)
+
+HOW TO RUN (LOCAL — recommended):
+  Double-click START_SCREENER.bat
+  Browser opens automatically at http://localhost:5555
+
+  NOTE: Local server runs FROM YOUR MACHINE, so NSE Bhavcopy downloads work
+  perfectly (no Cloudflare block). Data is fetched fresh on startup.
+
+BHAVCOPY TIMING:
+  - NSE releases Bhavcopy ~6 PM IST on trading days
+  - Server auto-detects and falls back up to 5 trading days if unavailable
+  - Before 6 PM: yesterday's data is loaded automatically
+  - If NSE is down: use the "Upload CSVs" button in the dashboard
+    → Download CM + FO Bhavcopy ZIPs from nseindia.com/market-data/exchange-statistics
+    → Extract CSVs → paste into the upload modal
+
+DEPLOY TO VERCEL (optional):
+  1. Put api_bhavcopy_vercel.js into an api/ folder, rename to api/bhavcopy.js
+  2. npm install && vercel --prod
+  NOTE: Vercel IPs may be blocked by NSE Cloudflare. Use local server for reliability.
+
+DATA SOURCES:
+  - NSE Bhavcopy CM   → Price, Open/High/Low, Volume, Turnover, 52W High/Low
+  - NSE Bhavcopy FO   → Futures OI, OI Change, PCR, Max CE/PE Strikes, Expiry
+  - All free, no API key, no authentication, no token expiry
