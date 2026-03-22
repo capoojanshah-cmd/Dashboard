@@ -1,5 +1,5 @@
 {
-  "name": "mktdesk-bhavcopy",
+  "name": "mktdesk",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,10 +10,11 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "recharts": "^2.12.7",
-    "adm-zip": "^0.5.16"
+    "recharts": "^2.12.7"
   },
   "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.4.2"
   }
